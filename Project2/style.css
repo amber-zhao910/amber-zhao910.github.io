@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+/* colors */
+--bg: #F0EBDC;
+--text-brown: #2E2420;
+--highlight-pink: #F2CDC0;
+--accent-orange: rgb(230, 127, 63);
+/* font */
+--cursive: "Reenie Beanie", cursive;
+--mono: "Roboto Mono", monospace;
+
+/* padding */
+--space-s: 16px;
+--space-m: 40px;
+--space-l: 96px;
+}
+
+h1, h3, h5, p { margin: 0; }
+html { background: var(--bg); }
+
+.title {
+  color: var(--accent-orange);
+  font-family: var(--cursive);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 144px;
+  line-height: 115px;  
+  text-align: left;
+  grid-column: 2 / 10; 
+  grid-row: 1; 
+  margin-bottom: var(--space-m);
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  margin: 0;
+  padding: var(--space-l) var(--space-m);
+  background: var(--bg);
+  color: var(--text-brown);
+  font-family: var(--mono);
+/* spacing */
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--space-s);
+  row-gap: var(--space-m);
+  align-content: start;
+}
+body > * { grid-column: 3 / 11; }
+
+.body{
+  color: var(--text-brown);
+  font-family: var(--mono);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 28px;
+  text-align: left;
+  max-width: 500px;
+}
+ 
+h5{
+  font-family: var(--cursive);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--ink);
+}
+
+a {
+	color: var(--bg);
+	text-decoration: none;
+  background: var(--accent-orange);
+  padding: 2px 4px;
+  border-radius: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+a.back {
+  background: none;
+  color: var(--accent-orange);
+  font-family: var(--cursive);
+  font-size: 32px;
+  padding: 0;
+  text-align: left;
+  grid-column: 2 / 10; 
+}
