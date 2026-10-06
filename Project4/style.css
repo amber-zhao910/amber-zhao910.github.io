@@ -56,12 +56,12 @@ margin-bottom: 0;
 
 .child.thin  {--h: 30px; --m: 340px}
 .child.thick {--h: 100px; --m: 200px}
-/* .child.repeat {--h: 10px; --m: 30px; --wc: 50px} */
+.child.repeat {--h: 10px; --m: 25px}
 
 .step {
     width: 50px;
     height: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     background: var(--indigo);    
 }
 
@@ -105,23 +105,24 @@ margin-bottom: 0;
 }
 
 .parallelogram {
-    width: 150px;
+    width: 130px;
     height: 100px;
     transform: skewX(20deg);
     background: var(--c, var(--indigo));
     opacity: 0.5; 
-    margin-bottom: 200px
+    margin-bottom: 200px;
 }
 
-.parallelogram.top {top: 0; left: 0;}
-.parallelogram.bottom {bottom: 0; right: 30px}
+.parallelogram.top {top: 0; margin-left: 20px;}
+.parallelogram.bottom {bottom: 0; margin-left: 50px}
 
 .diagonal-flat {
     top: 0px;
-    width: 200px;
-    height: 300px;
-    transform: skewY(20px);
+    width: 100px;
+    height: 400px;
+    transform: skewx(-10deg);
     position: absolute;
     background: var(--c, var(--indigo));
     opacity: 0.5; 
+    margin-left: 50px
 }
