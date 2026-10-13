@@ -5,32 +5,12 @@ console.log('dark mode');
 //------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
 
-  //------------------------------------
-  // show hide each item
-  //------------------------------------
-  const items = document.querySelectorAll('.item');
-  items.forEach(function(item) {
-    item.addEventListener('click', function() {
-      this.classList.toggle('active');
-    });
-  });
+  const fireToggle = document.getElementById('fireToggle');
 
-  //---------------------------
-  // setup show hide all button
-  //---------------------------
-  const showHideButton = document.getElementById('showhide');
-  showHideButton.addEventListener('click', function() {
-    items.forEach(function(item) {
-      item.classList.toggle('active');
-    });
-  });
-
-  //------------------------------------
-  // adds a darkmode class to the body
-  //------------------------------------
-  const darkModeButton = document.getElementById('darkmode');
-  darkModeButton.addEventListener('click', function() {
+  fireToggle.addEventListener('click', function() {
+    fireToggle.classList.toggle('off');
     document.body.classList.toggle('darkmode');
   });
 
 });
+

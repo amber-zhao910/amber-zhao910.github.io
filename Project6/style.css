@@ -1,88 +1,185 @@
-*{
-	margin: 0;
-	padding: 0;
-}
-
 
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
 
-body{
+body {
   font-family: "Michroma", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: grey
-} 
-
-.container{
- 	width: 500px;
-	margin: auto;
+  color: lightgrey;
 }
 
-.item{
-	border-top: 2px solid var(--accent-color);
-	padding: 2rem 0;
+.container {
+  width: 500px;
+  margin: auto;
 }
 
-h1{
-	text-align: center;
-	margin: 1rem auto;
+h1 {
+  text-align: center;
+  margin: auto;
 }
 
-.item { 
-	cursor: pointer;
+.item {
+  border-top: 2px solid var(--accent-color);
+  padding: 32px 0;
+  cursor: pointer;
 }
 
-.heading h2::before{
-	content: '+';
-	display: inline-block;
-	width: 30px;
+.heading h2::before {
+  content: '+';
+  display: inline-block;
+  width: 30px;
 }
 
-.details{
-	line-height: 1.3;
-	color: var(--accent-color);
-	display: none;
-/*	height: 0;
-	overflow: hidden;
-	transition: height 400ms ease-in-out;*/
+.details {
+  line-height: 1.3;
+  color: var(--accent-color);
+  display: none;
 }
 
-.active .heading h2::before{
-	content: '-';
-}
-.active .details{
-	display: block;
-/*	height: 300px;*/
-}
+.active .heading h2::before { content: '-'; }
+.active .details { display: block; }
 
-
-
-button{
-	font-size: 1rem;
-	font-weight: bold;
-	border: 2px solid var(--accent-color);
-	background: transparent;
-	padding: 0.5rem;
-	margin-bottom: 1rem;
-	border-radius: 5px;
+/*20*/
+.big-number {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  font-size: 700px;
+  line-height: 1;
+  white-space: nowrap;
 }
 
-button:hover{
-	background: rgb(200 200 200);
-	cursor: pointer;
+.digit {
+  display: inline-block;
+  vertical-align: top;
+  width: 700px;
+  height: 700px;
+  overflow: hidden;
 }
 
+.digit-track {
+  display: block;
+  transform: translateY(-700px);
+  transition: transform 1.5s ease;
+}
 
-/*	DARK MODE STYLES GO HERE */
+.digit-track span {
+  display: block;
+  height: 700px;
+  text-align: center;
+}
+
+body.darkmode .digit-track {
+  transform: translateY(0);
+  transition: transform 2s ease out 0.8s;
+}
+
+/* .digit::before { content: '0'; }
+body.darkmode .digit::before { content: '1'; } */
+
+/* candle */
+.candle-stand {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .wick {
+  width: 4px;
+  height: 14px;
+  margin-top: -6px;
+  background: #1b1613;
+  border-radius: 2px;
+} */
+
+.candle {
+  width: 30px;
+  height: 180px;
+  background: #cdbda3;
+  border-radius: 6px 6px 0 0;
+  margin-top: 10px;
+}
+
+/* toggle */
+.fire-toggle {
+  position: relative;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  width: 100px;
+  height: 121px;
+  transform-origin: 50% 100%;
+  transition: transform 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fire-toggle:focus-visible {
+  outline: 3px solid #ffd23f;
+  outline-offset: 6px;
+  border-radius: 12px;
+}
+
+.fire-toggle:hover { transform: scale(1.08); }
+
+.flame {
+  position: absolute;
+  top: 21px;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50% 0 50% 50%; 
+  transform: rotate(-45deg);
+  background: linear-gradient(45deg, #d83a0a, #ff9a00);
+  filter: drop-shadow(0 0 14px rgba(255, 106, 0, 0.7));
+  transition: filter 0.25s ease;
+}
+
+.flame::after {
+  content: '';
+  position: absolute;
+  left: 17%;
+  top: 33%;
+  width: 50%;
+  height: 50%;
+  border-radius: 50% 0 50% 50%;
+  background: linear-gradient(45deg, #ffb000, #ffe680);
+}
+
+.fire-toggle:hover .flame {
+  filter: drop-shadow(0 0 26px rgba(255, 140, 0, 1));
+}
+
+/* OFF */
+:root {
+  --ash: #4a4440;
+  --ash-inner: #5e5751;
+}
+
+.fire-toggle.off .flame {
+  background: var(--ash);
+  filter: none;
+}
+.fire-toggle.off .flame::after { background: var(--ash-inner); }
+
+.fire-toggle.off:hover .flame {
+  background: #7a5a48;
+  filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.35));
+}
+.fire-toggle.off:hover .flame::after { background: #9a7258; }
 
 body.darkmode {
-	background: black;
-	color: white;
-
-	/*	redefine a CSS variable */
-	--accent-color: rgb(0,255,0);
-}
-
-body.darkmode button{
-	color: white;
+  background: black;
+  color: white;
 }
