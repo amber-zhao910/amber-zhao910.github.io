@@ -9,6 +9,7 @@
 
   --sans: 'Manrope', system-ui, sans-serif;
   --serif: 'Newsreader', Georgia, serif;
+  --zh: 'Noto Sans SC', 'Noto Sans CJK SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 }
 * { box-sizing: border-box; }
 
@@ -106,7 +107,18 @@ body.leaving.handoff .s.keep { opacity: 0; transition: opacity .3s; }
 body.leaving #label { filter: opacity(0); transition: filter .4s; }
 body.leaving #bg { opacity: 0; }
 
-/*title*/
+.hint {
+  position: fixed;
+  right: 24px;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  font: 600 9px var(--sans);
+  letter-spacing: .14em;
+  color: var(--mute);
+  transition: opacity .6s;
+  z-index: 9;
+}
+.hint.gone { opacity: 0; }
+
 /*title*/
 #label {
   position: absolute;
@@ -192,7 +204,22 @@ body.walk #walk { opacity: 1; visibility: visible; }
 .note.in { opacity: 1; }
 .note .q { font-size: clamp(9px, 1.25vw, 13px); line-height: 1.45; color: var(--mute); margin: 0 0 8px; max-width: 11em; }
 .note .d { font: 600 clamp(6px, .8vw, 9px) var(--sans); letter-spacing: .12em; color: var(--orange-soft); }
-.cap { writing-mode: vertical-rl; font-size: clamp(10px, 1.4vw, 14px); letter-spacing: .3em; color: var(--mute); }  /* vertical 公园散步 */
+/* .cap { writing-mode: vertical-rl; font-size: clamp(10px, 1.4vw, 14px); letter-spacing: .3em; color: var(--mute); }  vertical version */
+.cap { writing-mode: vertical-rl; font-size: clamp(10px, 1.4vw, 14px); letter-spacing: .3em; color: var(--mute); }
+.walk-title { text-align: center; }
+.walk-title .wt-zh {
+  font: 300 60px/1.1 var(--zh);     
+  letter-spacing: .08em;
+  color: var(--ink);
+}
+.walk-title .wt-label {
+  font: 600 8px/1 var(--sans);  
+  letter-spacing: .12em;
+  color: var(--orange);
+  margin: 6px 0;
+  white-space: nowrap;
+}
+@media (max-width: 700px) { .walk-title .wt-zh { font-size: 38px; } }
 
 .edge { position: fixed; left: 0; bottom: 0; z-index: 8; display: none; }
 body.walk .edge { display: block; }

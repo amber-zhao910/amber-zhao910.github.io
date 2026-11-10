@@ -229,6 +229,7 @@ function drawTrail(f, a = 0, glow = false) {
   grad.setAttribute('y1', pa.y);           
   grad.setAttribute('y2', pa.y - 120);
   tip.setAttribute('transform', `translate(${pf.x} ${pf.y})`);
+  tip.style.opacity = glow ? 1 : 0;
 }
 
 function update() {
@@ -246,7 +247,10 @@ function update() {
     const r = el.getBoundingClientRect();
     if (r.top < vh * .85 && r.bottom > vh * .05) el.classList.add('in');
   });
+
+  hint.classList.toggle('gone', walk.scrollTop < walk.scrollHeight - vh - 120);
 }
+
 walk.addEventListener('scroll', update, { passive: true });
 addEventListener('resize', update);
 

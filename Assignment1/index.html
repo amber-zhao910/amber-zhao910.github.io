@@ -5,7 +5,7 @@
     <title>姥爷 — Memory Archive of My Grandpa</title>
 <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Newsreader:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Newsreader:wght@400;500&family=Noto+Sans+SC:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -69,12 +69,22 @@
           <stop offset="0" style="stop-color:var(--orange);stop-opacity:0"/>
           <stop offset="1" style="stop-color:var(--orange);stop-opacity:1"/>
         </linearGradient>
+        <radialGradient id="glowGrad">
+          <stop offset="0" style="stop-color:var(--orange);stop-opacity:.6"/>
+          <stop offset="1" style="stop-color:var(--orange);stop-opacity:0"/>
+        </radialGradient>
       </defs>
-      <path id="trail" pathLength="1" 
+      <path id="trail" pathLength="1"
         d="M80 1770 C143.5 1657.6 191.3 1547.1 194 1446.5 C195 1370 430 1080 430 1000 C430 920 370 830 370 750 C370 670 500 600 500 510 C500 440 480 390 480 310"/>
+      <g id="tip"><circle r="75" fill="url(#glowGrad)"/></g>
     </svg>
 
     <!-- photos -->
+    <div class="note walk-title" style="left:28%;top:81.5%">
+      <div class="wt-zh">公园</div>
+      <div class="wt-label">A WALK IN THE PARK</div>
+      <div class="wt-zh">散步</div>
+    </div> 
     <figure class="ph echo" style="left:64%;top:59.7%;width:17%"><img src="images/park-4.jpg"></figure>
     <figure class="ph" style="left:34%;top:63.5%;width:34%"><img src="images/park-1.jpg"></figure>
     <figure class="ph" style="left:15%;top:46.4%;width:20%"><img src="images/park-2.jpg"></figure>
@@ -84,7 +94,6 @@
     </div>
     <figure class="ph echo" style="left:20%;top:28.2%;width:17%"><img src="images/park-4.jpg"></figure>
     <figure class="ph" style="left:52%;top:29.3%;width:22%"><img src="images/park-3.jpg"></figure>
-    <div class="note cap" style="left:76%;top:29.8%">公园散步</div>
     <figure class="ph" style="left:33%;top:9.4%;width:26%"><img src="images/park-4.jpg"></figure>
   </div>
 </section>
