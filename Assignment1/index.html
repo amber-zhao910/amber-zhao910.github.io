@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>姥爷 — Memory Archive of My Grandpa</title>
+<!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Newsreader:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!-- landing page -->
+<main id="home">
+  <!-- flash photo -->
+  <div id="bg"></div>
+  <div class="center">
+    <svg id="name" viewBox="0 0 100 200" aria-label="姥爷 — grandpa">
+      <!-- 女 · 撇点 -->
+      <g class="s" data-id="s01"><path d="M23 10C20 30 15 46 12 59L39 80"/></g>
+      <!-- 女 · 撇 -->
+      <g class="s" data-id="s02"><path d="M36 27C35 44 32 58 26 66C21 74 17 82 11 88"/></g>
+      <!-- 女 · 横 -->
+      <g class="s" data-id="s03"><path d="M11 31L37 29.5"/></g>
+      <!-- 老 · 横 -->
+      <g class="s" data-id="s04"><path d="M43 24.3L75 24.3"/></g>
+      <!-- 老 · 竖 -->
+      <g class="s" data-id="s05"><path d="M59.2 9.5L59.2 42"/></g>
+      <!-- 老 · 横 -->
+      <g class="s" data-id="s06"><path d="M40.5 42.7L90 42.7"/></g>
+      <!-- 老 · long diagonal 撇: FIRST LINKED STROKE (opens the park walk) -->
+      <g class="s" data-id="s07" data-page="walk" data-bg="p2"><path d="M85 16C76 34 58 50 37 65"/></g>
+      <!-- 匕 · 撇 -->
+      <g class="s" data-id="s08"><path d="M85 56C76 60 67 63.5 57 67"/></g>
+      <!-- 匕 · 竖弯钩 -->
+      <g class="s" data-id="s09"><path d="M55.5 52L55.5 80C55.5 85 58 86.3 63 86.3L78 86.3C83 86.3 85 85 87 74"/></g>
+      <!-- 爷 (6 strokes) -->
+      <!-- 父 · 撇 -->
+      <g class="s" data-id="s10"><path d="M39 112C31 118 22 122.5 14.5 125.5"/></g>
+      <!-- 父 · 点 -->
+      <g class="s" data-id="s11"><path d="M59.5 111C68 114 78 119 86 123"/></g>
+      <!-- 父 · 长撇 -->
+      <g class="s" data-id="s12"><path d="M68 118C60 127 52 132 42 137C32 142 20 145.5 12 147"/></g>
+      <!-- 父 · 捺 -->
+      <g class="s" data-id="s13"><path d="M35 119C42 128 50 133 58 137C68 141 78 144.5 89 146"/></g>
+      <!-- 卩 · 横折钩 -->
+      <g class="s" data-id="s14"><path d="M20.5 153L73.5 153L73.5 171C73.5 176 71 177 65 177L56 177"/></g>
+      <!-- 卩 · 竖 -->
+      <g class="s" data-id="s15"><path d="M44.3 153L44.3 190"/></g>
+    </svg>
+    <button id="label" aria-expanded="false">MEMORY ARCHIVE OF MY GRANDPA</button>
+  </div>
+
+  <!-- hidden intro text -->
+  <aside id="about">
+    <h1>A constellation of memories</h1>
+    <p>My grandpa passed away this summer. This archive shares the fragments that remain with me even if he is no longer here.</p>
+    <p>Click on each stroke to open photographs, videos, objects, audio, and words.</p>
+    <button id="remember">CLICK TO REMEMBER</button>
+  </aside>
+</main>
+
+ <!-- STROKE 01: PARK WALK -->
+<section id="walk" aria-label="Stroke 01 — Park walk">
+  <div class="track" id="track">
+    <svg viewBox="0 0 1000 1810" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="tailFade" gradientUnits="userSpaceOnUse" x1="0" y1="1770" x2="0" y2="1650">
+          <stop offset="0" style="stop-color:var(--orange);stop-opacity:0"/>
+          <stop offset="1" style="stop-color:var(--orange);stop-opacity:1"/>
+        </linearGradient>
+      </defs>
+      <path id="trail" pathLength="1" 
+        d="M80 1770 C143.5 1657.6 191.3 1547.1 194 1446.5 C195 1370 430 1080 430 1000 C430 920 370 830 370 750 C370 670 500 600 500 510 C500 440 480 390 480 310"/>
+    </svg>
+
+    <!-- photos -->
+    <figure class="ph echo" style="left:64%;top:59.7%;width:17%"><img src="images/park-4.jpg"></figure>
+    <figure class="ph" style="left:34%;top:63.5%;width:34%"><img src="images/park-1.jpg"></figure>
+    <figure class="ph" style="left:15%;top:46.4%;width:20%"><img src="images/park-2.jpg"></figure>
+    <div class="note" style="left:46%;top:47%">
+      <p class="q">Every step you took, I took three.</p>
+      <div class="d">AUGUST 18, 2025</div>
+    </div>
+    <figure class="ph echo" style="left:20%;top:28.2%;width:17%"><img src="images/park-4.jpg"></figure>
+    <figure class="ph" style="left:52%;top:29.3%;width:22%"><img src="images/park-3.jpg"></figure>
+    <div class="note cap" style="left:76%;top:29.8%">公园散步</div>
+    <figure class="ph" style="left:33%;top:9.4%;width:26%"><img src="images/park-4.jpg"></figure>
+  </div>
+</section>
+
+<div class="hint" id="hint">SCROLL UP ↑</div>
+
+<!-- navigation back -->
+<div class="edge">
+  <button class="nav" id="back" aria-label="Back to main page">
+    <svg viewBox="0 0 28 58">
+        <text x="1" y="25" font-size="26" fill="currentColor">姥</text>
+        <text x="1" y="54" font-size="26" fill="currentColor">爷</text>
+    </svg>
+  </button>
+</div>
+
+<button class="float" id="fback" aria-label="Back to main page">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+</button>
+
+<div id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
